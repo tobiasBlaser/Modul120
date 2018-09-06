@@ -9,21 +9,20 @@ using System.Data.Entity;
 
 namespace M120Projekt.Data
 {
-    public class KlasseB
+    public class Land
     {
         #region Datenbankschicht
         [Key]
-        public Int64 KlasseBId { get; set; }
-        [Required]
-        public String TextAttribut { get; set; }
-        [Required]
-        public DateTime DatumAttribut { get; set; }
-        [Required]
-        public Boolean BooleanAttribut { get; set; }
-        public ICollection<KlasseA> FremdListeAttribut { get; set; }
+        public Int64 LandId { get; set; }
+        public String LandName { get; set; }
+        public DateTime Gruendungsjahr { get; set; }
+        public Int64 Flaeche { get; set; }
+        public Int64 Einwohnerzahl { get; set; }
+        public String Hauptsprache { get; set; }
+        public ICollection<Stadt> Stadt { get; set; }
         #endregion
         #region Applikationsschicht
-        public KlasseB() { }
+        public Land() { }
         [NotMapped]
         public String BerechnetesAttribut
         {
@@ -32,46 +31,45 @@ namespace M120Projekt.Data
                 return "Im Getter kann Code eingefügt werden für berechnete Attribute";
             }
         }
-        public static List<Data.KlasseB> LesenAlle()
+        public static List<Data.Land> LesenAlle()
         {
             using (var context = new Data.Context())
             {
-                return (from record in context.KlasseB.Include(x => x.FremdListeAttribut) select record).ToList();
+                return (from record in context.Land.Include(x => x.Stadt) select record).ToList();
             }
         }
-        public static Data.KlasseB LesenID(Int64 klasseBId)
+        public static Data.Land LesenID(Int64 LandId)
         {
             using (var context = new Data.Context())
             {
-                return (from record in context.KlasseB.Include(x => x.FremdListeAttribut) where record.KlasseBId == klasseBId select record).FirstOrDefault();
+                return (from record in context.Land.Include(x => x.Stadt) where record.LandId == LandId select record).FirstOrDefault();
             }
         }
-        public static List<Data.KlasseB> LesenAttributGleich(String suchbegriff)
+        public static List<Data.Land> LesenAttributGleich(String suchbegriff)
         {
             using (var context = new Data.Context())
             {
-                var klasseBquery = (from record in context.KlasseB.Include(x => x.FremdListeAttribut) where record.TextAttribut == suchbegriff select record).ToList();
-                return klasseBquery;
+                var Landquery = (from record in context.Land.Include(x => x.Stadt) where record.LandName == suchbegriff select record).ToList();
+                return Landquery;
             }
         }
-        public static List<Data.KlasseB> LesenAttributWie(String suchbegriff)
+        public static List<Data.Land> LesenAttributWie(String suchbegriff)
         {
             using (var context = new Data.Context())
             {
-                return (from record in context.KlasseB.Include(x => x.FremdListeAttribut) where record.TextAttribut.Contains(suchbegriff) select record).ToList();
+                return (from record in context.Land.Include(x => x.Stadt) where record.LandName.Contains(suchbegriff) select record).ToList();
             }
         }
         public Int64 Erstellen()
         {
-            if (this.TextAttribut == null || this.TextAttribut == "") this.TextAttribut = "leer";
+            if (this.LandName == null || this.LandName == "") this.LandName = "leer";
             // Option mit Fehler statt Default Value
-            // if (klasseB.TextAttribut == null) throw new Exception("Null ist ungültig");
-            if (this.DatumAttribut == null) this.DatumAttribut = DateTime.MinValue;
+            // if (Land.TextAttribut == null) throw new Exception("Null ist ungültig");
             using (var context = new Data.Context())
             {
-                context.KlasseB.Add(this);
+                context.Land.Add(this);
                 context.SaveChanges();
-                return this.KlasseBId;
+                return this.LandId;
             }
         }
         public void Aktualisieren()
@@ -93,7 +91,7 @@ namespace M120Projekt.Data
         }
         public override string ToString()
         {
-            return KlasseBId.ToString(); // Für bessere Coded UI Test Erkennung
+            return LandId.ToString(); // Für bessere Coded UI Test Erkennung
         }
         #endregion
     }

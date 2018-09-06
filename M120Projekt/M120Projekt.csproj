@@ -70,9 +70,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Data\KlasseA.cs" />
-    <Compile Include="Data\KlasseB.cs" />
     <Compile Include="Data\Context.cs" />
+    <Compile Include="Data\Land.cs" />
+    <Compile Include="Data\Stadt.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\
+C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Release\
 M120Projekt
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\App.xaml
 11151548125
 
-141507269930
+10-2072186502
 16-1042942441
 MainWindow.xaml;
 
-False
+True
 

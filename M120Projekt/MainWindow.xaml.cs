@@ -32,7 +32,7 @@ namespace M120Projekt
             APIDemo.DemoAUpdate();
             APIDemo.DemoARead();
             APIDemo.DemoBRead();
-            APIDemo.DemoADelete();
+            //APIDemo.DemoADelete();
             APIDemo.DemoBRead();
         }
     }
