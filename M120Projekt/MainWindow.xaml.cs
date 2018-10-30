@@ -25,15 +25,21 @@ namespace M120Projekt
         {
             InitializeComponent();
             // Aufruf diverse APIDemo Methoden
-            APIDemo.DemoBCreate();
-            APIDemo.DemoACreate();
-            APIDemo.DemoARead();
-            APIDemo.DemoBRead();
-            APIDemo.DemoAUpdate();
-            APIDemo.DemoARead();
-            APIDemo.DemoBRead();
+            //APIDemo.DemoBCreate();
+            //APIDemo.DemoACreate();
+            //APIDemo.DemoARead();
+            //APIDemo.DemoBRead();
+            //APIDemo.DemoAUpdate();
+            //APIDemo.DemoARead();
+            //APIDemo.DemoBRead();
             //APIDemo.DemoADelete();
-            APIDemo.DemoBRead();
+            //APIDemo.DemoBRead();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Land_Detail land = new Land_Detail();
+            land.Show();
         }
     }
 }

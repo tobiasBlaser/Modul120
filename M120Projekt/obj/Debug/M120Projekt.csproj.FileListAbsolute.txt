@@ -58,3 +58,5 @@ C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\M120Projekt.Propertie
 C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\M120Projekt.csproj.GenerateResource.cache
 C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\M120Projekt.csproj.CoreCompileInputs.cache
 C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\M120Projekt.csproj.CopyComplete
+C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\Land_Detail.g.cs
+C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\Land_Detail.baml
