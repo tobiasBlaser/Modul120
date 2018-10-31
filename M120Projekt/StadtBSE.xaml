@@ -11,7 +11,21 @@
                          Margin="10"
                          Width="250" Height="150">
         <StackPanel>
-            <Label FontSize="18">Bern</Label>
+            <Label x:Name="stadtName" FontSize="18" Width="125" HorizontalAlignment="Left"></Label>
+            <Canvas Width="125" HorizontalAlignment="Left">
+                <Button x:Name="editStadtBtn" Click="editStadt" Canvas.Top="-25" Canvas.Right="-90" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="Images/edit.png" Width="20" Height="20" />
+                </Button>
+                <Button x:Name="deleteStadtBtn" Click="deleteStadt" Canvas.Top="-25" Canvas.Right="-120" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="Images/delete.png" Width="20" Height="20" />
+                </Button>
+                <Button x:Name="saveStadtBtn" Click="saveEdit" Canvas.Top="-25" Canvas.Right="-90" Background="Transparent" BorderBrush="Transparent" Visibility="Hidden">
+                    <Image Source="Images/save.png" Width="20" Height="20" />
+                </Button>
+                <Button x:Name="cancleStadtBtn" Click="cancleEdit" Canvas.Top="-25" Canvas.Right="-120" Background="Transparent" BorderBrush="Transparent" Visibility="Hidden">
+                    <Image Source="Images/delete.png" Width="20" Height="20" />
+                </Button>
+            </Canvas>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100" />
@@ -23,12 +37,12 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Label Grid.Row="1" Grid.Column="0">Fläche(m^2)</Label>
-                <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">40000</TextBox>
+                <Label Grid.Row="1" Grid.Column="0">Fläche(km^2)</Label>
+                <TextBox x:Name="flaecheInput" Grid.Row="1" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2"></TextBox>
                 <Label Grid.Row="2" Grid.Column="0">Einwohnerzahl</Label>
-                <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">8000000</TextBox>
+                <TextBox x:Name="einwohnerInput" Grid.Row="2" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2"></TextBox>
                 <Label Grid.Row="3" Grid.Column="0">Hauptstadt</Label>
-                <CheckBox HorizontalAlignment="Left" Height="25" Width="25" Grid.Row="3" Grid.Column="1" IsEnabled="False"></CheckBox>
+                <CheckBox x:Name="isHauptstadtInput" HorizontalAlignment="Left" Height="25" Width="25" Grid.Row="3" Grid.Column="1" IsEnabled="False"></CheckBox>
             </Grid>
         </StackPanel>
     </Border>
