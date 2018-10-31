@@ -8,12 +8,15 @@
         Title="Land_Detail" Height="450" Width="800">
     <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
         <DockPanel>
-            <StackPanel DockPanel.Dock="Top" Margin="10">
-                <Canvas Height="50">
-                    <Label HorizontalAlignment="Center" FontSize="24">Schweiz</Label>
-                    <Button Width="120" Height="30" Margin="10" Canvas.Top="0" Canvas.Right="0">_Stadt erstellen</Button>
-                    <Button Width="120" Height="30" Margin="10" Canvas.Top="0" Canvas.Right="130">_Bearbeiten</Button>
-                    <Button Width="120" Height="30" Margin="10" Canvas.Top="0" Canvas.Right="260" Click="Button_Click">_Löschen</Button>
+            <StackPanel DockPanel.Dock="Top" Margin="10 0 10 10">
+                <Canvas Height="60">
+                    <Label HorizontalAlignment="Center" FontSize="24" Canvas.Top="10">Schweiz</Label>
+                    <Label x:Name="zustandLbl" Canvas.Top="-5" Canvas.Right="10" Foreground="Red">Zustand: Ansicht</Label>
+                    <Button x:Name="createCityButton" Width="120" Height="30" Margin="10" Canvas.Top="10" Canvas.Right="0" Click="createCityButton_Click">_Stadt erstellen</Button>
+                    <Button x:Name="editButton" Width="120" Height="30" Margin="10" Canvas.Top="10" Canvas.Right="130" Click="Edit_Click">_Bearbeiten</Button>
+                    <Button x:Name="saveButton" Width="120" Height="30" Margin="10" Canvas.Top="10" Canvas.Right="0" Click="Save_Click" Visibility="Hidden">_Speichern</Button>
+                    <Button x:Name="cancleButton" Width="120" Height="30" Margin="10" Canvas.Top="10" Canvas.Right="130" Click="Cancle_Click" Visibility="Hidden">_Abbrechen</Button>
+                    <Button x:Name="deleteButton" Width="120" Height="30" Margin="10" Canvas.Top="10" Canvas.Right="260" Click="Delete_Click">_Löschen</Button>
                 </Canvas>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -27,94 +30,17 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" Grid.Column="0">Gründungsjahr</Label>
-                    <TextBox Grid.Row="0" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">1291</TextBox>
-                    <Label Grid.Row="1" Grid.Column="0">Fläche</Label>
-                    <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">40000</TextBox>
+                    <TextBox Grid.Row="0" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2" x:Name="gruendungsJahrInput">1291</TextBox>
+                    <Label Grid.Row="1" Grid.Column="0">Fläche(m^2)</Label>
+                    <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2" x:Name="flaecheInput">40000</TextBox>
                     <Label Grid.Row="2" Grid.Column="0">Einwohnerzahl</Label>
-                    <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">8000000</TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2" x:Name="einwohnerInput">8000000</TextBox>
                     <Label Grid.Row="3" Grid.Column="0">Hauptsprache</Label>
-                    <TextBox Grid.Row="3" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">Deutsch</TextBox>
+                    <TextBox Grid.Row="3" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2" x:Name="spracheInput">Deutsch</TextBox>
                 </Grid>
             </StackPanel>
             <WrapPanel HorizontalAlignment="Center">
-                <Border  BorderBrush="Gray"
-                         BorderThickness="1"
-                         Margin="10"
-                         Width="250" Height="150">
-                    <StackPanel>
-                        <Label FontSize="18">Bern</Label>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Row="1" Grid.Column="0">Fläche</Label>
-                            <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">40000</TextBox>
-                            <Label Grid.Row="2" Grid.Column="0">Einwohnerzahl</Label>
-                            <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">8000000</TextBox>
-                            <Label Grid.Row="3" Grid.Column="0">Hauptstadt</Label>
-                            <CheckBox HorizontalAlignment="Left" Height="25" Width="25" Grid.Row="3" Grid.Column="1"></CheckBox>
-                        </Grid>
-                    </StackPanel>
-                </Border>
-                <Border  BorderBrush="Gray"
-                         BorderThickness="1"
-                         Margin="10"
-                         Width="250" Height="150">
-                    <StackPanel>
-                        <Label FontSize="18">Zürich</Label>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Row="1" Grid.Column="0">Fläche</Label>
-                            <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">40000</TextBox>
-                            <Label Grid.Row="2" Grid.Column="0">Einwohnerzahl</Label>
-                            <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">8000000</TextBox>
-                            <Label Grid.Row="3" Grid.Column="0">Hauptstadt</Label>
-                            <CheckBox HorizontalAlignment="Left" Height="25" Width="25" Grid.Row="3" Grid.Column="1"></CheckBox>
-                        </Grid>
-                    </StackPanel>
-                </Border>
-                <Border  BorderBrush="Gray"
-                         BorderThickness="1"
-                         Margin="10"
-                         Width="250" Height="150">
-                    <StackPanel>
-                        <Label FontSize="18">Basel</Label>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Row="1" Grid.Column="0">Fläche</Label>
-                            <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">40000</TextBox>
-                            <Label Grid.Row="2" Grid.Column="0">Einwohnerzahl</Label>
-                            <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">8000000</TextBox>
-                            <Label Grid.Row="3" Grid.Column="0">Hauptstadt</Label>
-                            <CheckBox HorizontalAlignment="Left" Height="25" Width="25" Grid.Row="3" Grid.Column="1"></CheckBox>
-                        </Grid>
-                    </StackPanel>
-                </Border>
+                <local:StadtBSE />
             </WrapPanel>
         </DockPanel>
     </ScrollViewer>

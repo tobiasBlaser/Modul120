@@ -61,6 +61,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="StadtBSE.xaml.cs">
+      <DependentUpon>StadtBSE.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Create_Stadt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Land_Detail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -74,6 +81,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Create_Stadt.xaml.cs">
+      <DependentUpon>Create_Stadt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\Land.cs" />
     <Compile Include="Data\Stadt.cs" />
@@ -84,6 +94,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StadtBSE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Migrations\Configuration.cs" />

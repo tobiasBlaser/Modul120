@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="M120Projekt.StadtBSE"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:M120Projekt"
+             mc:Ignorable="d" 
+             d:DesignHeight="170" d:DesignWidth="270">
+    <Border  BorderBrush="Gray"
+                         BorderThickness="1"
+                         Margin="10"
+                         Width="250" Height="150">
+        <StackPanel>
+            <Label FontSize="18">Bern</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Grid.Column="0">Fläche(m^2)</Label>
+                <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">40000</TextBox>
+                <Label Grid.Row="2" Grid.Column="0">Einwohnerzahl</Label>
+                <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2">8000000</TextBox>
+                <Label Grid.Row="3" Grid.Column="0">Hauptstadt</Label>
+                <CheckBox HorizontalAlignment="Left" Height="25" Width="25" Grid.Row="3" Grid.Column="1" IsEnabled="False"></CheckBox>
+            </Grid>
+        </StackPanel>
+    </Border>
+</UserControl>

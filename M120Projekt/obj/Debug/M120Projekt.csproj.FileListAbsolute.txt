@@ -60,3 +60,8 @@ C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\M120Projekt.csproj.Co
 C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\M120Projekt.csproj.CopyComplete
 C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\Land_Detail.g.cs
 C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\Land_Detail.baml
+C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\Create_Stadt.g.cs
+C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\Create_Stadt.baml
+C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\StadtBSE.g.cs
+C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\vmadmin\Desktop\M120Projekt\M120Projekt\obj\Debug\StadtBSE.baml
